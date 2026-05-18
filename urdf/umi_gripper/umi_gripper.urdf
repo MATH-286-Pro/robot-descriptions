@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<robot name="umi_gripper">
+
+
+  <material name="orange">
+    <color rgba="1 0.27 0.0 1" />
+  </material>
+
+  <material name="dark_gray">
+    <color rgba="0.1 0.1 0.1 1" />
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1" />
+  </material>
+
+
+  <link name="world">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="world_link_linear_x">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="world_link_linear_y">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="world_link_linear_z">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="world_link_rotation_x">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="world_link_rotation_y">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="linear_rail">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/linear_rail.stl" />
+      </geometry>
+      <material name="light_gray">
+        <color rgba="0.60000392 0.60000392 0.60000392 1.00000000"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.070"/>
+      <inertia ixx="0.000131496458" iyy="0.000000718958" izz="0.000131722500" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="base_link_top">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/umi_base_top.stl" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="-0.03225 0 0.021" rpy="0 0 0" />
+      <mass value="0.050" />
+      <inertia
+        ixx="0.000123362667"
+        iyy="0.000024800167"
+        izz="0.000147970833"
+        ixy="0"
+        ixz="0"
+        iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="base_link_bottom">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/umi_base_bottom.stl" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="-0.040 0 0.00785" rpy="0 0 0" />
+      <mass value="0.055" />
+      <inertia
+        ixx="0.000138763579"
+        iyy="0.000041459229"
+        izz="0.000173882317"
+        ixy="0"
+        ixz="0"
+        iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="base_link_grip">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/umi_base_grip.stl" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="-0.058 0 -0.057" rpy="0 0.12 0" />
+      <mass value="0.046" />
+      <inertia 
+        ixx="0.000037724167"
+        iyy="0.000041169500"
+        izz="0.000008228833"
+        ixy="0" 
+        ixz="0" 
+        iyz="0" 
+        />
+    </inertial>
+  </link>
+
+  <link name="camera">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/gopro.stl" />
+      </geometry>
+      <material name="dark_gray" />
+    </visual>
+    <inertial>
+      <origin xyz="-0.01375 -0.0199 -0.00915" rpy="0 0 0" />
+      <mass value="0.127"/>
+      <inertia ixx="0.00008187139667" iyy="0.00003925993333" izz="0.00006650778333" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
+  <link name="left_mirror">
+    <visual>
+      <origin xyz="-0.021 0.0695 0.058" rpy="1.5707963 0 0.392699" />
+      <geometry>
+        <box size="0.06 0.0374 0.0002" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.021 0.0695 0.058" rpy="1.5707963 0.392699 0" />
+      <mass value="0.005"/>
+      <inertia ixx="0.000000582833" iyy="0.000001500017" izz="0.000002082817" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="right_mirror">
+    <visual>
+      <origin xyz="-0.021 -0.0695 0.058" rpy="1.5707963 0 -0.392699" />
+      <geometry>
+        <box size="0.06 0.0374 0.0002" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.021 -0.0695 0.058" rpy="1.5707963 -0.392699 0" />
+      <mass value="0.005"/>
+      <inertia ixx="0.000000582833" iyy="0.000001500017" izz="0.000002082817" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="left_carriage">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/left_finger_holder.stl" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.0265 0.020 0" rpy="0 0 0" />
+      <mass value="0.020" />
+      <inertia ixx="0.000005781667" iyy="0.000012808333" izz="0.000013776667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
+  <link name="right_carriage">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/right_finger_holder.stl" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.0265 -0.020 0" rpy="0 0 0" />
+      <mass value="0.020" />
+      <inertia ixx="0.000005781667" iyy="0.000012808333" izz="0.000013776667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
+  <link name="left_finger">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/left_finger.stl" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision name="left_finger_holder_geom_10">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/umi_left_finger_collision.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.080 0.020 0" rpy="0 0 0" />
+      <mass value="0.043" />
+      <inertia ixx="0.000008118543" iyy="0.000057482543" izz="0.000060830667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
+  <link name="right_finger">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/right_finger.stl" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision name="right_finger_holder_geom_10">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/assets/umi_right_finger_collision.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.080 -0.020 0" rpy="0 0 0" />
+      <mass value="0.043" />
+      <inertia ixx="0.000008118543" iyy="0.000057482543" izz="0.000060830667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
+  <link name="left_sticker">
+    <visual>
+      <origin xyz="0.0265 0.02 0.0178" rpy="0 0 -1.5707963" />
+      <geometry>
+        <box size="0.018 0.018 0.00002" />
+      </geometry>
+      <material name="Left_Aruco_Base_Sticker">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+        <texture filename="textures/assets/left_aruco_sticker.png" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.0265 0.02 0.0178" rpy="0 0 0" />
+      <mass value="0.005" />
+      <inertia
+        ixx="0.000000135000"
+        iyy="0.000000135000"
+        izz="0.000000270000"
+        ixy="0"
+        ixz="0"
+        iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="right_sticker">
+    <visual>
+      <origin xyz="0.0265 -0.02 0.0178" rpy="0 0 -1.5707963" />
+      <geometry>
+        <box size="0.018 0.018 0.00002" />
+      </geometry>
+      <material name="Right_Aruco_Base_Sticker">
+        <color rgba="1.00000000 1.00000000 1.00000000 1.00000000"/>
+        <texture filename="textures/assets/right_aruco_sticker.png" />
+      </material>
+    </visual>
+    <inertial>
+      <origin xyz="0.0265 -0.02 0.0178" rpy="0 0 0" />
+      <mass value="0.005" />
+      <inertia
+        ixx="0.000000135000"
+        iyy="0.000000135000"
+        izz="0.000000270000"
+        ixy="0"
+        ixz="0"
+        iyz="0"/>
+    </inertial>
+  </link>
+
+
+
+
+  <joint name="gripper_joint_x" type="prismatic">
+    <parent link="world" />
+    <child link="world_link_linear_x" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-2.0" upper="2.0" effort="0" velocity="0" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="gripper_joint_y" type="prismatic">
+    <parent link="world_link_linear_x" />
+    <child link="world_link_linear_y" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.0" upper="2.0" effort="0" velocity="0" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="gripper_joint_z" type="prismatic">
+    <parent link="world_link_linear_y" />
+    <child link="world_link_linear_z" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0" upper="2.0" effort="0" velocity="0" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="gripper_joint_rx" type="revolute">
+    <parent link="world_link_linear_z" />
+    <child link="world_link_rotation_x" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-31.415" upper="31.415" effort="0" velocity="0" />
+    <dynamics damping="10.1" friction="0.1" />
+  </joint>
+
+  <joint name="gripper_joint_ry" type="revolute">
+    <parent link="world_link_rotation_x" />
+    <child link="world_link_rotation_y" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-31.415" upper="31.415" effort="0" velocity="0" />
+    <dynamics damping="10.1" friction="0.1" />
+  </joint>
+
+  <joint name="gripper_joint_rz" type="revolute">
+    <parent link="world_link_rotation_y" />
+    <child link="base_link_top" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-31.415" upper="31.415" effort="0" velocity="0" />
+    <dynamics damping="10.1" friction="0.1" />
+  </joint>
+
+  <joint name="fix_base_link_bottom" type="fixed">
+    <parent link="base_link_top" />
+    <child link="base_link_bottom" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_base_link_grip" type="fixed">
+    <parent link="base_link_top" />
+    <child link="base_link_grip" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_linear_rail_and_base_link" type="fixed">
+    <parent link="base_link_top" />
+    <child link="linear_rail" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_linear_rail_and_gopro" type="fixed">
+    <parent link="linear_rail" />
+    <child link="camera" />
+    <origin xyz="-0.0522 0.0 0.09" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_linear_rail_and_left_mirror" type="fixed">
+    <parent link="linear_rail" />
+    <child link="left_mirror" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_linear_rail_and_right_mirror" type="fixed">
+    <parent link="linear_rail" />
+    <child link="right_mirror" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="left_finger_joint" type="prismatic">
+    <parent link="linear_rail" />
+    <child link="left_carriage" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="0.0425" effort="10" velocity="0.1" />
+    <dynamics damping="10.1" friction="0.1" />
+  </joint>
+
+  <joint name="right_finger_joint" type="prismatic">
+    <parent link="linear_rail" />
+    <child link="right_carriage" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <mimic joint="left_finger_joint" multiplier="1" offset="0" />
+    <limit lower="0" upper="0.0425" effort="10" velocity="0.1" />
+    <dynamics damping="10.1" friction="0.1" />
+  </joint>
+
+  <joint name="left_finger_passive_joint" type="fixed">
+    <parent link="left_carriage" />
+    <child link="left_finger" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="right_finger_passive_joint" type="fixed">
+    <parent link="right_carriage" />
+    <child link="right_finger" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_left_carriage_and_sticker" type="fixed">
+    <parent link="left_carriage" />
+    <child link="left_sticker" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_right_carriage_and_sticker" type="fixed">
+    <parent link="right_carriage" />
+    <child link="right_sticker" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+</robot>

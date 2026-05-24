@@ -14,6 +14,9 @@
     <color rgba="1 1 1 1" />
   </material>
 
+  <material name="black">
+    <color rgba="0 0 0 1" />
+  </material>
 
   <link name="world">
     <inertial>
@@ -310,8 +313,49 @@
     </inertial>
   </link>
 
+  <link name="left_tape">
+    <visual>
+      <origin xyz="0.079 0 -0.001" rpy="1.5707963 0 0" />
+      <geometry>
+        <box size="0.12 0.0258 0.00002" />
+      </geometry>
+      <material name="black" />
+    </visual>
+    <inertial>
+      <origin xyz="0.079 0 -0.001" rpy="1.5707963 0 0" />
+      <mass value="0.005"/>
+      <inertia 
+        ixx="0.000000277350"
+        iyy="0.000006000000"
+        izz="0.000006277350"
+        ixy="0" 
+        ixz="0" 
+        iyz="0"
+        />
+    </inertial>
+  </link>
 
-
+  <link name="right_tape">
+    <visual>
+      <origin xyz="0.079 0 -0.001" rpy="1.5707963 0 0" />
+      <geometry>
+        <box size="0.12 0.0258 0.00002" />
+      </geometry>
+      <material name="black" />
+    </visual>
+    <inertial>
+      <origin xyz="0.079 0 -0.001" rpy="1.5707963 0 0" />
+      <mass value="0.005"/>
+      <inertia 
+        ixx="0.000000277350"
+        iyy="0.000006000000"
+        izz="0.000006277350"
+        ixy="0" 
+        ixz="0" 
+        iyz="0"
+        />
+    </inertial>
+  </link>
 
   <joint name="gripper_joint_x" type="prismatic">
     <parent link="world" />
@@ -443,6 +487,18 @@
   <joint name="fix_right_carriage_and_sticker" type="fixed">
     <parent link="right_carriage" />
     <child link="right_sticker" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_left_tape_and_left_finger" type="fixed">
+    <parent link="left_finger" />
+    <child link="left_tape" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_right_tape_and_right_finger" type="fixed">
+    <parent link="right_finger" />
+    <child link="right_tape" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 

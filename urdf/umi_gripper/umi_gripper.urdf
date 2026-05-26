@@ -357,6 +357,14 @@
     </inertial>
   </link>
 
+  <link name="eef_link">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+
   <joint name="gripper_joint_x" type="prismatic">
     <parent link="world" />
     <child link="world_link_linear_x" />
@@ -501,5 +509,12 @@
     <child link="right_tape" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
+  
+  <joint name="fix_linear_rail_and_end_effector" type="fixed">
+    <parent link="linear_rail" />
+    <child link="eef_link" />
+    <origin xyz="0.14 0 0" rpy="0 0 0" />
+  </joint>
+
 
 </robot>

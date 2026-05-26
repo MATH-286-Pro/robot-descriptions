@@ -419,37 +419,37 @@
     <dynamics damping="10.1" friction="0.1" />
   </joint>
 
-  <joint name="fix_base_link_bottom" type="fixed">
+  <joint name="fix_base_link_bottom" type="fixed" dont_collapse="true">
     <parent link="base_link_top" />
     <child link="base_link_bottom" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_base_link_grip" type="fixed">
+  <joint name="fix_base_link_grip" type="fixed" dont_collapse="true">
     <parent link="base_link_top" />
     <child link="base_link_grip" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_linear_rail_and_base_link" type="fixed">
+  <joint name="fix_linear_rail_and_base_link" type="fixed" dont_collapse="true">
     <parent link="base_link_top" />
     <child link="linear_rail" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_linear_rail_and_gopro" type="fixed">
+  <joint name="fix_linear_rail_and_gopro" type="fixed" dont_collapse="true">
     <parent link="linear_rail" />
     <child link="camera" />
     <origin xyz="-0.0522 0.0 0.09" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_linear_rail_and_left_mirror" type="fixed">
+  <joint name="fix_linear_rail_and_left_mirror" type="fixed" dont_collapse="true">
     <parent link="linear_rail" />
     <child link="left_mirror" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_linear_rail_and_right_mirror" type="fixed">
+  <joint name="fix_linear_rail_and_right_mirror" type="fixed" dont_collapse="true">
     <parent link="linear_rail" />
     <child link="right_mirror" />
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -474,43 +474,43 @@
     <dynamics damping="10.1" friction="0.1" />
   </joint>
 
-  <joint name="left_finger_passive_joint" type="fixed">
+  <joint name="left_finger_passive_joint" type="fixed" dont_collapse="true">
     <parent link="left_carriage" />
     <child link="left_finger" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="right_finger_passive_joint" type="fixed">
+  <joint name="right_finger_passive_joint" type="fixed" dont_collapse="true">
     <parent link="right_carriage" />
     <child link="right_finger" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_left_carriage_and_sticker" type="fixed">
+  <joint name="fix_left_carriage_and_sticker" type="fixed" dont_collapse="true">
     <parent link="left_carriage" />
     <child link="left_sticker" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_right_carriage_and_sticker" type="fixed">
+  <joint name="fix_right_carriage_and_sticker" type="fixed" dont_collapse="true">
     <parent link="right_carriage" />
     <child link="right_sticker" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_left_tape_and_left_finger" type="fixed">
+  <joint name="fix_left_tape_and_left_finger" type="fixed" dont_collapse="true">
     <parent link="left_finger" />
     <child link="left_tape" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <joint name="fix_right_tape_and_right_finger" type="fixed">
+  <joint name="fix_right_tape_and_right_finger" type="fixed" dont_collapse="true">
     <parent link="right_finger" />
     <child link="right_tape" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
   
-  <joint name="fix_linear_rail_and_end_effector" type="fixed">
+  <joint name="fix_linear_rail_and_end_effector" type="fixed" dont_collapse="true">
     <parent link="linear_rail" />
     <child link="eef_link" />
     <origin xyz="0.14 0 0" rpy="0 0 0" />

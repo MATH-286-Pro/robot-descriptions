@@ -1301,13 +1301,13 @@
     <child link="vx300s_gripper_bar_link"/>
   </joint>
   <link name="vx300s_gripper_bar_link">
-    <visual>
+    <!-- <visual>
       <origin rpy="0 0 1.5707963267948966" xyz="-0.063 0 0"/>
       <geometry>
         <mesh filename="meshes/vx300s_9_gripper_bar.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="interbotix_black"/>
-    </visual>
+    </visual> -->
     <!-- <collision>
       <origin rpy="0 0 0" xyz="-0.063 0 0"/>
       <geometry>
@@ -1425,6 +1425,26 @@
     </inertial>
   </link>
 
+  <link name="umi_base_top">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/umi_base_top.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.03225 0 0.021" rpy="0 0 0" />
+      <mass value="0.050" />
+      <inertia
+        ixx="0.000123362667"
+        iyy="0.000024800167"
+        izz="0.000147970833"
+        ixy="0"
+        ixz="0"
+        iyz="0"/>
+    </inertial>
+  </link>
+  
   <!-- Joints -->
   <joint name="left_finger_joint" type="prismatic">
     <axis xyz="0 1 0"/>
@@ -1478,6 +1498,13 @@
     <origin rpy="0 0 0" xyz="-0.0522 0.0 0.09"/>
     <parent link="vx300s_fingers_link"/>
     <child link="gopro"/>
+  </joint>
+
+  <joint name="umi_base_top_joint" type="fixed" dont_collapse="true">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <parent link="vx300s_fingers_link"/>
+    <child link="umi_base_top"/>
   </joint>
 
 </robot>

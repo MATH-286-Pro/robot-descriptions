@@ -1069,6 +1069,19 @@
   <material name="interbotix_black">
     <texture filename="meshes/interbotix_black.png"/>
   </material>
+
+  <material name="orange">
+    <color rgba="1 0.27 0.0 1" />
+  </material>
+
+  <material name="dark_gray">
+    <color rgba="0.1 0.1 0.1 1" />
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1" />
+  </material>
+
   <link name="vx300s_base_link">
     <visual>
       <origin rpy="0 0 1.5707963267948966" xyz="0 0 0"/>
@@ -1325,7 +1338,7 @@
       <geometry>
         <mesh filename="meshes/umi_left_finger.stl" scale="1 1 1"/>
       </geometry>
-      <material name="interbotix_black"/>
+      <material name="orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1345,7 +1358,7 @@
       <geometry>
         <mesh filename="meshes/umi_right_finger.stl" scale="1 1 1"/>
       </geometry>
-      <material name="interbotix_black"/>
+      <material name="orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1373,7 +1386,7 @@
       <geometry>
         <mesh filename="meshes/gopro.stl" scale="1 1 1"/>
       </geometry>
-      <material name="interbotix_black"/>
+      <material name="dark_gray"/>
     </visual>
       <inertial>
       <origin xyz="-0.01375 -0.0199 -0.00915" rpy="0 0 0" />

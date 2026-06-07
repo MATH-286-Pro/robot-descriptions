@@ -1472,6 +1472,26 @@
       <inertia ixx="0.000000582833" iyy="0.000001500017" izz="0.000002082817" ixy="0" ixz="0" iyz="0"/>
     </inertial>
   </link>
+  
+  <link name="umi_base_bottom">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/umi_base_bottom.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.040 0 0.00785" rpy="0 0 0" />
+      <mass value="0.055" />
+      <inertia
+        ixx="0.000138763579"
+        iyy="0.000041459229"
+        izz="0.000173882317"
+        ixy="0"
+        ixz="0"
+        iyz="0"/>
+    </inertial>
+  </link>
 
   <!-- Joints -->
   <joint name="left_finger_joint" type="prismatic">
@@ -1545,6 +1565,13 @@
     <parent link="umi_base_top" />
     <child link="right_mirror" />
     <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="umi_base_bottom_joint" type="fixed" dont_collapse="true">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <parent link="vx300s/fingers_link"/>
+    <child link="umi_base_bottom"/>
   </joint>
 
 </robot>

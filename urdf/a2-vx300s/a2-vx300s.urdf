@@ -1332,6 +1332,21 @@
       <inertia ixx="0.000000001" iyy="0.000000001" izz="0.000000001" ixy="0" ixz="0" iyz="0"/>
     </inertial>
   </link>
+
+  <link name="vx300s_left_carriage">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/umi_left_finger_holder.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <origin xyz="0.0265 0.020 0" rpy="0 0 0" />
+      <mass value="0.020" />
+      <inertia ixx="0.000005781667" iyy="0.000012808333" izz="0.000013776667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
   <link name="vx300s_left_finger_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1352,6 +1367,21 @@
       <inertia ixx="0.000008118543" iyy="0.000057482543" izz="0.000060830667" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
+
+  <link name="vx300s_right_carriage">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/umi_right_finger_holder.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <origin xyz="0.0265 -0.020 0" rpy="0 0 0" />
+      <mass value="0.020" />
+      <inertia ixx="0.000005781667" iyy="0.000012808333" izz="0.000013776667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+
   <link name="vx300s_right_finger_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1401,7 +1431,7 @@
     <limit effort="10" lower="0" upper="0.0425" velocity="0.1"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="vx300s_fingers_link"/>
-    <child link="vx300s_left_finger_link"/>
+    <child link="vx300s_left_carriage"/>
     <dynamics damping="10.1" friction="0.1"/>
   </joint>
 
@@ -1410,10 +1440,31 @@
     <limit effort="10" lower="0" upper="0.0425" velocity="0.1"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="vx300s_fingers_link"/>
-    <child link="vx300s_right_finger_link"/>
+    <child link="vx300s_right_carriage"/>
     <dynamics damping="10.1" friction="0.1"/>
     <mimic joint="left_finger_joint" multiplier="1" offset="0"/>
   </joint>
+
+
+  <joint name="left_finger_passive_joint" type="prismatic" dont_collapse="true">
+    <axis xyz="0 1 0"/>
+    <limit effort="10" lower="0" upper="0.01" velocity="0.1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="vx300s_left_carriage"/>
+    <child link="vx300s_left_finger_link"/>
+    <dynamics damping="10.1" friction="0.1"/>
+  </joint>
+
+  <joint name="right_finger_passive_joint" type="prismatic" dont_collapse="true">
+    <axis xyz="0 -1 0"/>
+    <limit effort="10" lower="0" upper="0.01" velocity="0.1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="vx300s_right_carriage"/>
+    <child link="vx300s_right_finger_link"/>
+    <dynamics damping="10.1" friction="0.1"/>
+    <mimic joint="left_finger_passive_joint" multiplier="1" offset="0"/>
+  </joint>
+  
 
   <joint name="fix_eef_link" type="fixed" dont_collapse="true">
     <axis xyz="1 0 0"/>

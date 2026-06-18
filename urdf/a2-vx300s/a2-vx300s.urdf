@@ -1591,7 +1591,7 @@
 
   <joint name="joint_gopro" type="fixed" dont_collapse="true">
     <axis xyz="0 1 0"/>
-    <origin rpy="0 0 0" xyz="-0.0522 0.0 0.09"/>
+    <origin xyz="-0.0552 0.0 0.087" rpy="0 0 0" />
     <parent link="vx300s_fingers_link"/>
     <child link="gopro"/>
   </joint>

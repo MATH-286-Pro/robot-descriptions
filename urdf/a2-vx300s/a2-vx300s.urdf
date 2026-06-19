@@ -1444,7 +1444,35 @@
         iyz="0"/>
     </inertial>
   </link>
-  
+
+  <link name="left_mirror">
+    <visual>
+      <origin xyz="-0.021 0.0695 0.058" rpy="1.5707963 0 0.392699" />
+      <geometry>
+        <box size="0.06 0.0374 0.0002" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.021 0.0695 0.058" rpy="1.5707963 0.392699 0" />
+      <mass value="0.005"/>
+      <inertia ixx="0.000000582833" iyy="0.000001500017" izz="0.000002082817" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <link name="right_mirror">
+    <visual>
+      <origin xyz="-0.021 -0.0695 0.058" rpy="1.5707963 0 -0.392699" />
+      <geometry>
+        <box size="0.06 0.0374 0.0002" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.021 -0.0695 0.058" rpy="1.5707963 -0.392699 0" />
+      <mass value="0.005"/>
+      <inertia ixx="0.000000582833" iyy="0.000001500017" izz="0.000002082817" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
   <!-- Joints -->
   <joint name="left_finger_joint" type="prismatic">
     <axis xyz="0 1 0"/>
@@ -1505,6 +1533,18 @@
     <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
     <parent link="vx300s_fingers_link"/>
     <child link="umi_base_top"/>
+  </joint>
+
+  <joint name="fix_linear_rail_and_left_mirror" type="fixed" dont_collapse="true">
+    <parent link="umi_base_top" />
+    <child link="left_mirror" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fix_linear_rail_and_right_mirror" type="fixed" dont_collapse="true">
+    <parent link="umi_base_top" />
+    <child link="right_mirror" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
 </robot>

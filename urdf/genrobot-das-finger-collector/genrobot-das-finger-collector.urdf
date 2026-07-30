@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="genrobot-das-finger-collector">
+
+  <material name="black">
+    <color rgba="0.02 0.02 0.02 1"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00904105599789235 -5.7595153250153E-05 -0.0321779248589074"
+        rpy="0 0 0" />
+      <mass
+        value="0.0380138865829761" />
+      <inertia
+        ixx="2.30654411958402E-05"
+        ixy="-4.02747065306938E-08"
+        ixz="-2.04246405591706E-06"
+        iyy="2.46016977527937E-05"
+        iyz="1.67977276853063E-09"
+        izz="3.72051768365837E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/base_link.STL" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="cam_Link">
+    <inertial>
+      <origin
+        xyz="-6.61467413533847E-05 3.99128194383813E-09 0.00593803110585829"
+        rpy="0 0 0" />
+      <mass
+        value="0.00245178479842839" />
+      <inertia
+        ixx="6.4644230631478E-08"
+        ixy="-5.56998411501945E-10"
+        ixz="-6.79182094131767E-11"
+        iyy="8.57838099758448E-08"
+        iyz="-1.54722740251395E-11"
+        izz="9.78255260493566E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/cam_Link.STL" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/cam_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cam"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="cam_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_Link">
+    <inertial>
+      <origin
+        xyz="-1.49999999501252E-06 -1.50000000548323E-06 0.00162500620000021"
+        rpy="0 0 0" />
+      <mass
+        value="0.00095808895" />
+      <inertia
+        ixx="1.97046481672192E-08"
+        ixy="-3.77282860007715E-17"
+        ixz="-1.25929530914897E-24"
+        iyy="3.02145246653629E-08"
+        iyz="-4.90147881176058E-24"
+        izz="4.82325370768529E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/imu_Link.STL" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/imu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu"
+    type="fixed">
+    <origin
+      xyz="-0.000101739704802331 0.0371915693484425 -0.039694608918047"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="cam_Link" />
+    <child
+      link="imu_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_Link">
+    <inertial>
+      <origin
+        xyz="0.0397382420235815 0.0210947681903172 -0.0147931419162822"
+        rpy="0 0 0" />
+      <mass
+        value="0.0565784020301612" />
+      <inertia
+        ixx="1.43818511226139E-05"
+        ixy="-1.31092601793317E-05"
+        ixz="-5.79876455650887E-07"
+        iyy="2.76915621616396E-05"
+        iyz="-2.84241807979075E-07"
+        izz="3.29589321889009E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_Link.STL" />
+      </geometry>
+      <material name="black"/>
+
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left"
+    type="revolute">
+    <origin
+      xyz="0.0063439 0.029335 -0.033799"
+      rpy="0 0 -0.6977" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.487"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="right_Link">
+    <inertial>
+      <origin
+        xyz="0.0409933578639715 -0.0210777664311135 -0.0129908846170191"
+        rpy="0 0 0" />
+      <mass
+        value="0.0397728999992067" />
+      <inertia
+        ixx="8.9257074651787E-06"
+        ixy="8.260321401281E-06"
+        ixz="-2.87097873288168E-07"
+        iyy="1.69431549012047E-05"
+        iyz="1.35415226597462E-07"
+        izz="2.08805036942517E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_Link.STL" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right"
+    type="revolute">
+    <origin
+      xyz="0.0063439 -0.029335 -0.033779"
+      rpy="0 0 0.6977" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.487"
+      effort="1"
+      velocity="1" />
+    <mimic
+      joint="left"
+      multiplier="1"
+      offset="0" />
+  </joint>
+</robot>

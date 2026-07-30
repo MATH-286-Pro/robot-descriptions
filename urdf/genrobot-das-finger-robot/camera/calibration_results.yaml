@@ -1,0 +1,220 @@
+source: C:\Users\rog-b860i-windows\Documents\Work\Genrobot\DAS-Finger_20260731181932_sub_right_97aac4_37cdaa4b.mcap
+mcap_topic: /robot0/sensor/camera0/compressed
+image_size:
+  width: 1600
+  height: 1300
+decoded_frames: 737
+detected_views: 34
+board:
+  type: AprilGrid
+  family: tag36h11
+  tag_rows: 6
+  tag_cols: 6
+  tag_size_m: 0.055
+  tag_gap_m: 0.0165
+  tag_pitch_m: 0.07150000000000001
+  kalibr_tagSpacing: 0.3
+  start_id: 0
+  end_id: 35
+recorded_camera_info_reference:
+  topic: /robot0/sensor/camera0/camera_info
+  width: 1600
+  height: 1300
+  distortion_model: ds
+  D_raw:
+  - 505.3665667809046
+  - 505.9970483418306
+  - 795.124005940977
+  - 655.966646695526
+  - -0.0014884786584615983
+  - 0.5715389325123077
+  K:
+  - 505.3665667809046
+  - 0.0
+  - 795.124005940977
+  - 0.0
+  - 505.9970483418306
+  - 655.966646695526
+  - 0.0
+  - 0.0
+  - 1.0
+  R:
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  P:
+  - 505.3665667809046
+  - 0.0
+  - 795.124005940977
+  - 0.0
+  - 0.0
+  - 505.9970483418306
+  - 655.966646695526
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0
+  frame_id: das_center_optical_frame_update2body_0.1.0.7.1
+  T_b_c_raw:
+  - -0.0008285395050875295
+  - 0.04676935529292573
+  - -0.0379660915218992
+  - -0.003901075407642703
+  - 0.7119403474936331
+  - 0.7022291094809393
+  - -3.192046047373848e-05
+  double_sphere_parameters_inferred:
+    fx: 505.3665667809046
+    fy: 505.9970483418306
+    cx: 795.124005940977
+    cy: 655.966646695526
+    xi: -0.0014884786584615983
+    alpha: 0.5715389325123077
+    note: D[0:4] duplicates K, so D is inferred as [fx,fy,cx,cy,xi,alpha].
+preferred_video_fit: opencv_fisheye
+recommended_for_full_fov:
+  model: opencv_fisheye
+  parameter_source: recorded_double_sphere_converted_to_opencv_fisheye
+opencv_rational:
+  model: opencv_rational
+  rms_reprojection_error_px: 1.534678853393981
+  mean_view_rmse_px: 1.4270866066217422
+  median_view_rmse_px: 1.2921149134635925
+  camera_matrix:
+  - - 531.4219856227447
+    - 0.0
+    - 790.4489796130542
+  - - 0.0
+    - 532.5146983376048
+    - 666.634982540365
+  - - 0.0
+    - 0.0
+    - 1.0
+  distortion_coefficients:
+  - -1.8324856404608678
+  - 1.158612635778741
+  - -0.0027529834905140986
+  - -0.0006750739819676449
+  - -0.1362592954741474
+  - -1.5688085694030354
+  - 0.696932209920747
+  - 0.10891260295540811
+  coefficient_order:
+  - k1
+  - k2
+  - p1
+  - p2
+  - k3
+  - k4
+  - k5
+  - k6
+  nominal_pinhole_fov_deg:
+    horizontal: 112.80961428324021
+    vertical: 101.34767116451728
+  views_used: 20
+  per_view_rmse_px:
+  - 1.8907549381256104
+  - 1.0235744714736938
+  - 2.3153769969940186
+  - 1.8705596923828125
+  - 1.4390788078308105
+  - 1.8910642862319946
+  - 1.7270909547805786
+  - 2.5004160404205322
+  - 0.9000149965286255
+  - 0.8671824932098389
+  - 1.0874547958374023
+  - 0.8936218023300171
+  - 0.9534751176834106
+  - 0.7722142934799194
+  - 0.9770547747612
+  - 1.1451510190963745
+  - 0.8227304220199585
+  - 1.45607590675354
+  - 2.3770275115966797
+  - 1.6318128108978271
+opencv_fisheye:
+  model: opencv_fisheye
+  rms_reprojection_error_px: 1.4975293500434137
+  mean_view_rmse_px: 1.3811456482514812
+  median_view_rmse_px: 1.2944159509473128
+  camera_matrix:
+  - - 502.3156740479017
+    - 0.0
+    - 791.4811886491153
+  - - 0.0
+    - 502.68843470399855
+    - 656.4797130396732
+  - - 0.0
+    - 0.0
+    - 1.0
+  distortion_coefficients:
+  - 0.14566179683954325
+  - -0.41050710963264997
+  - 0.805177783615778
+  - -0.5527684102217889
+  coefficient_order:
+  - k1
+  - k2
+  - k3
+  - k4
+  nominal_pinhole_fov_deg:
+    horizontal: 115.75102095205573
+    vertical: 104.56564591908108
+  views_used: 20
+  per_view_rmse_px:
+  - 1.9942936668665352
+  - 2.3877175405851627
+  - 0.6814312018797166
+  - 1.5066227149983151
+  - 2.0876874094689937
+  - 2.037513077724941
+  - 1.7956644846053724
+  - 1.7980128499165096
+  - 0.9151102572814033
+  - 0.8225479723066612
+  - 1.1458653532369523
+  - 0.8880616627187924
+  - 0.9011126523146908
+  - 0.7460549501580768
+  - 0.9049298875023135
+  - 0.7911565464902827
+  - 0.7848196919431701
+  - 1.4429665486576735
+  - 2.4312462320067896
+  - 1.560098264367276
+opencv_fisheye_from_recorded_ds:
+  source_model: double_sphere
+  target_model: opencv_fisheye
+  camera_matrix:
+  - - 505.3665667809046
+    - 0.0
+    - 795.124005940977
+  - - 0.0
+    - 505.9970483418306
+    - 655.966646695526
+  - - 0.0
+    - 0.0
+    - 1.0
+  distortion_coefficients:
+  - 0.05246115523491198
+  - -0.004467628809391041
+  - 0.0018344295518293327
+  - -0.0003957181963575988
+  coefficient_order:
+  - k1
+  - k2
+  - k3
+  - k4
+  covered_normalized_radius: 2.0520409547324494
+  covered_diagonal_fov_deg: 205.9554692342355
+  model_fit_rmse_px: 0.08437303311661672
+  model_fit_max_error_px: 0.16993294307863077
+  note: Polynomial fit to the recorded DS projection, not an additional board fit.
